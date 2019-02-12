@@ -1,0 +1,54 @@
+# Configuration file for Gammu SMS Daemon
+
+
+[gammu]
+device = /dev/serial/by-path/....
+connection = at19200
+logfile = /var/log/gammu/gammu.log
+logformat = textalldate
+
+# You can add different configuration if there is several mount points
+# [gammu1] / [gammu2]
+# device = /dev/serial/by-path/...
+# connection = at19200
+# logfile = /var/log/gammu/gammu.log
+# logformat = textalldate
+
+[smsd]
+service = sql
+driver = native_mysql
+user = root
+password = 1514co79R
+pc = localhost
+database = gammu
+inboxformat = unicode
+outboxformat = unicode
+transmitformat = auto
+debuglevel = 0 #5 = All debug data
+logfile = /var/log/gammu/smsd.log
+
+RunOnReceive = /srv/gammu/receive.sh
+
+#The number of seconds between performing a preventive soft reset in order to minimize the cases of hanging phones
+ResetFrequency = 180
+
+#The number of seconds between testing for received SMSes, when the phone is busy sending SMSes.
+ReceiveFrequency = 10
+
+#The number of seconds between refreshing phone status (battery, signal)
+StatusFrequency = 60
+
+#How many seconds should SMSD wait after there is no message in outbox.
+CommTimeout = 10
+
+#Shows how many seconds SMSD should wait for network answer during sending sms.
+SendTimeout = 30
+
+#How many times will SMSD try to resend message if sending fails.
+MaxRetries = 2
+
+#The number of seconds how long will SMSD sleep before checking for some activity.
+LoopSleep = 5
+
+#Whether to check if phone wants to enter PIN.
+CheckSecurity = 1
