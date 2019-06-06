@@ -1,0 +1,6 @@
+# Huawei E169
+
+DefaultVendor=  0x12d1;
+DefaultProduct= 0x1001
+DetachStorageOnly=0
+HuaweiMode=1

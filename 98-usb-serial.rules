@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="12d1", ATTRS{idProduct}=="1001", SYMLINK+="ttyHUAWEI%E{ID_USB_INTERFACE_NUM}"

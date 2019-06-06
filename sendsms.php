@@ -11,6 +11,7 @@ if (empty($_POST['number']) ||
 	die('0');
 
 $pdo = new PDO('mysql:host=localhost;dbname=gammu', 'root', '');
+$pdo->exec("set names 'utf8'");
 
 $num = secure(repairNumber($_POST['number']));
 $message = utf8_decode(addslashes($_POST['message']));

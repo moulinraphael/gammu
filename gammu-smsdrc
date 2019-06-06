@@ -1,11 +1,21 @@
 # Configuration file for Gammu SMS Daemon
-
-
 [gammu]
-device = /dev/serial/by-path/....
+port = /dev/ttyHUAWEI00
 connection = at19200
 logfile = /var/log/gammu/gammu.log
-logformat = textalldate
+logformat = textall
+
+[gammu1]
+port = /dev/ttyHUAWEI01
+connection = at19200
+logfile = /var/log/gammu/gammu.log
+logformat = textall
+
+[gammu2]
+port = /dev/ttyHUAWEI02
+connection = at19200
+logfile = /var/log/gammu/gammu.log
+logformat = textall
 
 # You can add different configuration if there is several mount points
 # [gammu1] / [gammu2]

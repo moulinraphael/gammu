@@ -82,7 +82,6 @@ foreach ($messages_ as $group => $messages_group) {
 	}
 }
 
-//print_r($messages); die;
 unset($message);
 if (!empty($messages)) {
         foreach ($messages as $message) {
